@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b14">
+  <meta name="description" content="Mert AI — sana yardımcı olmaya hazır.">
+  <title>Mert AI</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="login-screen" class="login-screen hidden">
+    <form id="login-form" class="login-card">
+      <div class="brand-mark large">M</div>
+      <p class="eyebrow">ÖZEL ALAN</p>
+      <h1>Mert AI</h1>
+      <p class="muted">Devam etmek için sana verilen giriş şifresini yaz.</p>
+      <label class="sr-only" for="site-password">Giriş şifresi</label>
+      <input id="site-password" type="password" placeholder="Giriş şifresi" autocomplete="current-password" required>
+      <button class="primary-button" type="submit">Giriş yap <span>→</span></button>
+      <p id="login-error" class="error-text" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <div class="app-shell" id="app-shell">
+    <aside class="sidebar">
+      <div class="brand-row">
+        <div class="brand-mark">M</div>
+        <div class="brand-copy"><strong>Mert AI</strong><span>Akıllı sohbet asistanı</span></div>
+      </div>
+      <button class="new-chat-button" id="new-chat"><span class="plus-icon">＋</span> Yeni sohbet</button>
+      <div class="history-heading">SON SOHBETLER</div>
+      <div id="history-list" class="history-list"></div>
+      <div class="sidebar-bottom">
+        <div class="online-dot"></div>
+        <div><strong>Gemini destekli</strong><span>Yapay zekâ hazır</span></div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="mobile-brand"><div class="brand-mark small">M</div><strong>Mert AI</strong></div>
+        <div class="topbar-note"><span class="status-dot"></span> <span>Çevrimiçi</span></div>
+        <button class="icon-button mobile-new" id="mobile-new-chat" aria-label="Yeni sohbet" title="Yeni sohbet">＋</button>
+      </header>
+
+      <section id="welcome" class="welcome-view">
+        <div class="welcome-orb"><div class="orb-core">M</div><span class="orb-ring ring-one"></span><span class="orb-ring ring-two"></span></div>
+        <p class="eyebrow">KİŞİSEL YAPAY ZEKÂ ASİSTANIN</p>
+        <h1>Selam Mert!<br><span>Bugün ne yapıyoruz?</span></h1>
+        <p class="welcome-description">Merak ettiğin bir şeyi sor, fikir üret veya bir konuda yardım iste.</p>
+        <div class="suggestion-grid">
+          <button class="suggestion-card" data-prompt="Bana ilginç ve şaşırtıcı 5 bilgi ver."><span class="suggestion-icon purple">✦</span><span><strong>İlginç bilgiler</strong><small>Yeni şeyler keşfet</small></span><b>↗</b></button>
+          <button class="suggestion-card" data-prompt="Bugün yapabileceğim eğlenceli bir proje öner."><span class="suggestion-icon blue">⌘</span><span><strong>Proje fikri</strong><small>Yaratıcılığını kullan</small></span><b>↗</b></button>
+          <button class="suggestion-card" data-prompt="Bir konuyu kolayca öğrenmem için bana yardımcı ol."><span class="suggestion-icon pink">◎</span><span><strong>Bir şey öğren</strong><small>Konuları beraber keşfet</small></span><b>↗</b></button>
+          <button class="suggestion-card" data-prompt="Bana kısa, komik bir fıkra anlat."><span class="suggestion-icon gold">☻</span><span><strong>Eğlence zamanı</strong><small>Biraz gülümse</small></span><b>↗</b></button>
+        </div>
+      </section>
+
+      <section id="chat-area" class="chat-area hidden" aria-live="polite">
+        <div id="messages" class="messages"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <form id="chat-form" class="composer">
+          <textarea id="message-input" rows="1" maxlength="5000" placeholder="Mert AI'a bir mesaj yaz..." aria-label="Mesajın" required></textarea>
+          <div class="composer-bottom">
+            <span class="composer-hint">Enter ile gönder · Shift + Enter ile yeni satır</span>
+            <button id="send-button" class="send-button" type="submit" aria-label="Mesajı gönder" disabled><span>Gönder</span><b>↑</b></button>
+          </div>
+        </form>
+        <p class="disclaimer">Mert AI bazen hata yapabilir. Önemli bilgileri kontrol etmeyi unutma.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
